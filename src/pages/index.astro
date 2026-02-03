@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero';
+import About from '../components/About.astro';
+import Metrics from '../components/Metrics.astro';
+import Program from '../components/Program.astro';
+import Participation from '../components/Participation.astro';
+import Footer from '../components/Footer.astro';
+
+import logoImage from '../assets/5thedition.png';
+---
+
+<Layout title="FECIIT 2026 | Feria de Ciencias del ITESO">
+	<main class="space-y-0">
+		<Hero client:load logoSrc={logoImage.src} />
+		<About />
+        <Metrics />
+        <Program />
+        <Participation />
+	</main>
+	<Footer />
+</Layout>

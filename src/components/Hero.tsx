@@ -9,9 +9,10 @@ import { motion } from 'framer-motion';
 
 interface HeroProps {
     logoSrc: string; // "5thedition.png"
+    labelSrc: string; // "label.png"
 }
 
-export default function Hero({ logoSrc }: HeroProps) {
+export default function Hero({ logoSrc, labelSrc }: HeroProps) {
     return (
         <section className="relative h-[120vh] w-full overflow-hidden">
             {/* Background Gradient: Planet-like effect from Black -> Blue -> White */}
@@ -71,14 +72,14 @@ export default function Hero({ logoSrc }: HeroProps) {
                             transition={{ delay: 0.4 }}
                         />
 
-                        <motion.div
+                        <motion.img
+                            src={labelSrc}
+                            alt="Todo tiene su ciencia"
+                            className="h-16 md:h-[90px] w-auto mb-6"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5, duration: 0.8 }}
-                            className="inline-block px-8 py-3 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-white text-xl font-medium tracking-wide shadow-lg"
-                        >
-                            Todo tiene su ciencia
-                        </motion.div>
+                        />
 
                         <h1 className="text-8xl md:text-[10rem] font-bold tracking-tighter text-white leading-none drop-shadow-xl space-y-0">
                             <span className="block">FECIIT</span>

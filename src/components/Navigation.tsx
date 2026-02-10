@@ -108,7 +108,7 @@ export default function Navigation({ theme = 'dark' }: NavigationProps) {
                         initial={{ opacity: 0, y: -20, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.95 }}
-                        className="fixed inset-0 bg-white/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center p-8 space-y-8"
+                        className="fixed inset-0 bg-white/95 z-40 flex flex-col items-center justify-center p-8 space-y-8"
                     >
                         {links.map((item) => (
                             <motion.a

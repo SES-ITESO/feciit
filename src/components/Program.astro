@@ -1,11 +1,11 @@
 ---
 const events = [
-  { time: "11:30", title: "Inauguración", type: "Ceremonia", location: "Auditorio Pedro Arrupe" },
-  { time: "12:00", title: "Primera ronda de evaluación de proyectos", type: "Evaluación", location: "Explanada Central" },
-  { time: "13:00", title: "Segunda Ronda de evaluación", type: "Evaluación", location: "Explanada Central" },
-  { time: "15:30", title: "Conferencia", type: "Charla", location: "Auditorio D1" },
-  { time: "16:00", title: "Panel abierto de interacción para proyectos", type: "Panel", location: "Auditorio D1" },
-  { time: "16:40", title: "Clausura del evento", type: "Ceremonia", location: "Auditorio Pedro Arrupe" },
+  { time: "11:30", title: "Inauguración", type: "Ceremonia" },
+  { time: "12:00", title: "Primera ronda de evaluación de proyectos", type: "Evaluación" },
+  { time: "13:00", title: "Segunda Ronda de evaluación", type: "Evaluación" },
+  { time: "15:30", title: "Conferencia", type: "Charla" },
+  { time: "16:00", title: "Panel abierto de interacción para proyectos", type: "Panel" },
+  { time: "16:40", title: "Clausura del evento", type: "Ceremonia" },
 ];
 ---
 
@@ -35,10 +35,8 @@ const events = [
                             <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">{event.title}</h3>
                             <div class="flex items-center gap-4 text-sm text-gray-400">
                                 <span class="px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">{event.type}</span>
-                                <span class="flex items-center gap-1">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                    {event.location}
-                                </span>
+                            </div>
+                        </div>
                             </div>
                         </div>
 

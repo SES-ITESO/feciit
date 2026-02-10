@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Countdown from './Countdown';
 
 // Note: In Astro + React, images often need to be passed as props or handled via public folder if direct import is tricky with Vite
 // For simplicity/reliability with dynamic motion, we'll assume the image is processed or use a direct path if in public, 
@@ -51,6 +52,25 @@ export default function Hero({ logoSrc, labelSrc }: HeroProps) {
                 className="absolute bottom-1/3 right-1/3 w-[600px] h-[600px] bg-blue-400/10 rounded-full blur-[120px] pointer-events-none"
             />
 
+            {/* Mobile Countdown Banner - Below Navbar */}
+            <div className="absolute top-32 left-0 w-full z-40 md:hidden flex flex-col items-center gap-6 px-4">
+                <div className="w-full max-w-sm mx-auto">
+                    <Countdown size="small" />
+                </div>
+
+                <motion.a
+                    href="https://www.eventbrite.com/e/feciit-2026-tickets-1976665888884?aff=oddtdtcreator"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white text-sm font-bold rounded-full transition-all hover:scale-105 shadow-lg"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5, duration: 0.5 }}
+                >
+                    Consigue tu entrada
+                </motion.a>
+            </div>
+
             {/* Content Container - positioned at end of screen viewport */}
             <div className="relative h-screen w-full flex flex-col justify-end p-8 md:p-16">
                 <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end gap-12">
@@ -71,6 +91,23 @@ export default function Hero({ logoSrc, labelSrc }: HeroProps) {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4 }}
                         />
+
+                        <motion.a
+                            href="https://www.eventbrite.com/e/feciit-2026-tickets-1976665888884?aff=oddtdtcreator"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hidden md:inline-flex items-center gap-2 px-6 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white text-sm font-bold rounded-full transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] mb-6 ml-2"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 }}
+                        >
+                            Consigue tu entrada
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </motion.a>
+
+                        <div className="mb-6 hidden md:block scale-75 origin-left">
+                            <Countdown size="small" />
+                        </div>
 
                         <motion.img
                             src={labelSrc}

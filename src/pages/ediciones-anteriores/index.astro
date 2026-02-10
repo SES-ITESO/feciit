@@ -1,27 +1,24 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import asset1 from '../../assets/asset1.png';
-import asset2 from '../../assets/asset2.png';
-import bg2 from '../../assets/bg2.jpeg';
-import bg from '../../assets/bg.png';
-import pattern from '../../assets/pattern.png';
-import logo from '../../assets/logo.png';
-import edition5 from '../../assets/5thedition.png';
+import image1 from '../../assets/image1.png';
+import image2 from '../../assets/image2.png';
+import image3 from '../../assets/image3.png';
+import image4 from '../../assets/image4.png';
+import image5 from '../../assets/image5.png';
+import image6 from '../../assets/image6.png';
+import image7 from '../../assets/image7.png';
+import image8 from '../../assets/image8.png';
 
 // Creating a list of images for the masonry layout
-// In a real scenario, these would befetched or mapped from a folder.
-// For now, we reuse available assets to simulate a gallery.
 const galleryImages = [
-    { src: bg2.src, alt: "Feria 2025 - Auditorio lleno", span: "row-span-2" },
-    { src: asset1.src, alt: "Proyecto de Robótica", span: "row-span-1" },
-    { src: asset2.src, alt: "Estudiantes presentando", span: "row-span-1" },
-    { src: bg.src, alt: "Ceremonia de inauguración", span: "row-span-2" },
-    { src: pattern.src, alt: "Decoración del evento", span: "row-span-1" },
-    { src: edition5.src, alt: "Ganadores 2024", span: "row-span-1" },
-    // Repeats to fill space since we have limited assets
-    { src: asset2.src, alt: "Jueces evaluando", span: "row-span-1" },
-    { src: asset1.src, alt: "Exposición de carteles", span: "row-span-2" },
-    { src: bg2.src, alt: "Ambiente festivo", span: "row-span-1" },
+    { src: image1.src, alt: "Edición 2025", span: "md:col-span-2 row-span-1" },
+    { src: image2.src, alt: "Edición 2025", span: "md:col-span-2 row-span-1" },
+    { src: image3.src, alt: "Edición 2025", span: "md:col-span-2 row-span-1" },
+    { src: image4.src, alt: "Edición 2025", span: "md:col-span-2 row-span-1" },
+    { src: image5.src, alt: "Edición 2025", span: "md:col-span-2 row-span-1" },
+    { src: image6.src, alt: "Edición 2025", span: "md:col-span-2 row-span-1" },
+    { src: image7.src, alt: "Edición 2025", span: "md:col-span-2 row-span-1" },
+    { src: image8.src, alt: "Edición 2025", span: "md:col-span-2 row-span-1" },
 ];
 ---
 
@@ -42,13 +39,13 @@ const galleryImages = [
             </div>
 
             <!-- Masonry Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
+            <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
                 {galleryImages.map((img, index) => (
-                    <div class={`relative group rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 ${img.span} ${index % 3 === 0 ? 'md:col-span-1' : ''}`}>
+                    <div class="relative group rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 break-inside-avoid">
                         <img 
                             src={img.src} 
                             alt={img.alt} 
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
                         />
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                             <p class="text-white font-medium text-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -59,25 +56,7 @@ const galleryImages = [
                 ))}
             </div>
 
-            <!-- Stats / Impact -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-16 border-t border-gray-100">
-                <div class="text-center space-y-2">
-                    <h3 class="text-4xl font-bold text-feciit-blue">4</h3>
-                    <p class="text-gray-500 font-medium">Ediciones Exitosas</p>
-                </div>
-                <div class="text-center space-y-2">
-                    <h3 class="text-4xl font-bold text-feciit-blue">+200</h3>
-                    <p class="text-gray-500 font-medium">Proyectos Presentados</p>
-                </div>
-                <div class="text-center space-y-2">
-                    <h3 class="text-4xl font-bold text-feciit-blue">+500</h3>
-                    <p class="text-gray-500 font-medium">Estudiantes Participantes</p>
-                </div>
-                <div class="text-center space-y-2">
-                    <h3 class="text-4xl font-bold text-feciit-blue">$100k+</h3>
-                    <p class="text-gray-500 font-medium">En Premios Otorgados</p>
-                </div>
-            </div>
+
             
             <!-- Call to Action -->
             <div class="bg-feciit-dark rounded-[3rem] p-12 text-center text-white relative overflow-hidden">

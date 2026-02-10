@@ -117,9 +117,9 @@ const RegistrationForm = () => {
                                     <p className="font-bold text-lg text-feciit-dark">{formData.name}</p>
                                     <p className="text-sm text-gray-500">{formData.institution}</p>
                                 </div>
-                                <div className="text-right">
-                                    <p className="text-xs font-bold text-feciit-blue uppercase">Fase 1</p>
-                                    <p className="text-xl font-mono font-bold text-feciit-dark">#FECIIT-26-001</p>
+                                <div class="text-right">
+                                    <p class="text-xs font-bold text-feciit-blue uppercase">3 de Marzo</p>
+                                    <p class="text-xl font-mono font-bold text-feciit-dark">#FECIIT-26-001</p>
                                 </div>
                             </div>
                         </div>

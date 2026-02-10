@@ -58,14 +58,34 @@ export default function Navigation({ theme = 'dark' }: NavigationProps) {
                     </div>
 
                     {/* Participa Button (Always Visible) */}
-                    <motion.a
-                        href="/participa"
-                        className={ctaBaseClass}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        Participa
-                    </motion.a>
+                    <div className="relative z-50 flex items-center">
+                        <motion.a
+                            href="/participa"
+                            className={ctaBaseClass}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            <span className="flex items-center gap-2">
+                                Entradas
+                            </span>
+                        </motion.a>
+                        <motion.svg
+                            className="absolute -bottom-8 left-1/2 -translate-x-1/2 pointer-events-none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke={isLight ? "currentColor" : "white"}
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            animate={{ y: [0, -3, 0] }}
+                            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                        >
+                            <path d="m18 15-6-6-6 6" />
+                        </motion.svg>
+                    </div>
 
                     {/* Mobile Hamburger Button */}
                     <button

@@ -30,9 +30,24 @@ const SubmissionForm = () => {
                         className="bg-white/90 backdrop-blur-xl p-8 md:p-12 rounded-[2.5rem] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] border border-white/60"
                     >
                         <form onSubmit={handleSubmit} className="space-y-8">
-                            <div className="text-center space-y-2 mb-8">
+                            <div className="text-center space-y-4 mb-8">
                                 <h3 className="text-3xl font-bold text-feciit-dark tracking-tight">Registro de Proyecto</h3>
                                 <p className="text-gray-500 text-sm italic">Completa la información técnica de tu investigación.</p>
+
+                                <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 text-sm text-left space-y-2">
+                                    <p className="flex justify-between">
+                                        <span className="font-bold text-blue-800">Cierre de Registro:</span>
+                                        <span className="font-medium text-blue-600">15 de Febrero</span>
+                                    </p>
+                                    <p className="flex justify-between">
+                                        <span className="font-bold text-blue-800">Entrega de Abstract:</span>
+                                        <span className="font-medium text-blue-600">23 de Febrero</span>
+                                    </p>
+                                    <p className="flex justify-between">
+                                        <span className="font-bold text-blue-800">Presentación:</span>
+                                        <span className="font-medium text-blue-600">3 de Marzo</span>
+                                    </p>
+                                </div>
                             </div>
 
                             <div className="space-y-6">

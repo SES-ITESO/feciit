@@ -1,55 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-// Mock Data for Workshops
-const workshops = [
-    {
-        id: 1,
-        title: "Introducción a la Inteligencia Artificial",
-        instructor: "Dra. Ana Martínez",
-        date: "03 Marzo, 10:00 AM",
-        location: "Laboratorio de Cómputo 3",
-        capacity: 25,
-        description: "Aprende los conceptos básicos de ML y crea tu primer modelo predictivo.",
-        tags: ["Tecnología", "Programación"],
-        image: "bg-blue-100" // Placeholder color
-    },
-    {
-        id: 2,
-        title: "Química Divertida: Reacciones Exotérmicas",
-        instructor: "Mtro. Carlos Ruiz",
-        date: "03 Marzo, 11:30 AM",
-        location: "Laboratorio de Quimica A",
-        capacity: 20,
-        description: "Experimentos seguros y vistosos para entender la termodinámica.",
-        tags: ["Ciencias Exactas", "Química"],
-        image: "bg-purple-100"
-    },
-    {
-        id: 3,
-        title: "Robótica con Arduino",
-        instructor: "Ing. Sofia Web",
-        date: "03 Marzo, 01:00 PM",
-        location: "Taller de Electrónica",
-        capacity: 15,
-        description: "Construye y programa un robot seguidor de línea desde cero.",
-        tags: ["Ingeniería", "Robótica"],
-        image: "bg-green-100"
-    },
-     {
-        id: 4,
-        title: "Divulgación Científica en Redes Sociales",
-        instructor: "Lic. Pedro Social",
-        date: "03 Marzo, 03:00 PM",
-        location: "Sala de Conferencias B",
-        capacity: 50,
-        description: "Cómo comunicar ciencia de manera efectiva en TikTok e Instagram.",
-        tags: ["Sociales", "Comunicación"],
-        image: "bg-yellow-100"
-    },
-];
-
-const tags = [...new Set(workshops.flatMap(w => w.tags))];
+// Mock Data removed as per request
+const workshops = [];
+const tags = [];
 ---
 
 <Layout title="Talleres | FECIIT 2026" navTheme="light">
@@ -69,65 +23,15 @@ const tags = [...new Set(workshops.flatMap(w => w.tags))];
             </div>
 
             <!-- Filters (Visual only for now) -->
-            <!-- Filters (Visual only for now) -->
-            <div class="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto px-4">
-                <button class="px-5 py-2 rounded-full bg-feciit-dark text-white font-medium text-sm shadow-md hover:opacity-90 transition-opacity">Todos</button>
-                {tags.map(tag => (
-                    <button class="px-5 py-2 rounded-full bg-gray-50 text-gray-600 font-medium text-sm hover:bg-gray-100 transition-colors border border-gray-200">
-                        {tag}
-                    </button>
-                ))}
-            </div>
-
-            <!-- Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {workshops.map((workshop) => (
-                    <div class="group bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col h-full">
-                        <div class={`h-48 ${workshop.image} relative overflow-hidden`}>
-                            <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
-                             <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-feciit-dark border border-white/20 shadow-sm">
-                                {workshop.capacity} Lugares
-                            </div>
-                        </div>
-                        
-                        <div class="p-8 flex flex-col flex-1">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                {workshop.tags.map(tag => (
-                                    <span class="px-2 py-1 bg-feciit-blue/5 text-feciit-blue text-xs font-bold uppercase tracking-wider rounded-md">
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
-                            
-                            <h3 class="text-2xl font-bold text-feciit-dark mb-2 group-hover:text-feciit-blue transition-colors">
-                                {workshop.title}
-                            </h3>
-                            
-                            <p class="text-gray-600 mb-6 flex-1">
-                                {workshop.description}
-                            </p>
-                            
-                            <div class="space-y-3 pt-6 border-t border-gray-100 text-sm text-gray-500">
-                                <div class="flex items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                    <span>{workshop.date}</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                                    <span>{workshop.location}</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                                    <span>{workshop.instructor}</span>
-                                </div>
-                            </div>
-                            
-                            <button class="w-full mt-6 py-3 rounded-xl bg-gray-50 text-feciit-dark font-bold hover:bg-feciit-dark hover:text-white transition-colors border border-gray-200">
-                                Inscribirse
-                            </button>
-                        </div>
-                    </div>
-                ))}
+            <!-- Placeholder Content -->
+            <div class="flex flex-col items-center justify-center py-20 text-center space-y-6">
+                <div class="w-24 h-24 bg-gray-50 rounded-full flex items-center justify-center mb-4">
+                    <span class="text-4xl">🚀</span>
+                </div>
+                <h3 class="text-2xl font-bold text-feciit-dark">Se anunciarán próximamente</h3>
+                <p class="text-gray-500 max-w-md">
+                    Estamos preparando una increíble selección de talleres para ti. Mantente atento a nuestras redes sociales.
+                </p>
             </div>
             
         </div>
